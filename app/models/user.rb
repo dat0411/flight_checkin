@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :flights,
+             :class_name => "FlightTable",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
