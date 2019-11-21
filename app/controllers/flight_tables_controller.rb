@@ -44,7 +44,7 @@ class FlightTablesController < ApplicationController
 
     @flight_table.description = params.fetch("description")
     @flight_table.time = params.fetch("time")
-    @flight_table.user_id = params.fetch("user_id")
+    
 
     if @flight_table.valid?
       @flight_table.save
