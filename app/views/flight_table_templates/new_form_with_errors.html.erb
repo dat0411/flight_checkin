@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @flight_table.present? %>
+  <% if @flight_table.errors.any? %>
+    <% @flight_table.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new flight table
+</h1>
+
+
+<hr>
+
+<!-- Form flight_table start -->
+<form action="/create_flight_table" method="post">
+<!-- Form flight_table end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @flight_table.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for time start -->
+  <div class="form-group">
+    <label for="time">
+      Time
+    </label>
+
+    <!-- Input for time start -->
+    <input type="text" id="time" name="time" class="form-control" value="<%= @flight_table.time %>">
+    <!-- Input for time end -->
+  </div>
+  <!-- Label and input for time end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @flight_table.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create flight table
+  </button>
+</form>
+
+<hr>
+
+<a href="/flight_tables">
+  Go back
+</a>
