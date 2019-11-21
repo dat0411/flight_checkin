@@ -13,17 +13,21 @@
 
       <!-- Edit link flight_table start -->
       <div class="col">
-        <a href="/flight_tables/<%= @flight_table.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit flight table
-        </a>
+        <% if current_user == @flight_table.user %>
+          <a href="/flight_tables/<%= @flight_table.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit flight_table
+          </a>
+        <% end %>
       </div>
       <!-- Edit link flight_table end -->
 
       <!-- Delete link flight_table start -->
       <div class="col">
-        <a href="/delete_flight_table/<%= @flight_table.id %>" class="btn btn-block btn-outline-secondary">
-          Delete flight table
-        </a>
+        <% if current_user == @flight_table.user %>
+          <a href="/delete_flight_table/<%= @flight_table.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete flight_table
+          </a>
+        <% end %>
       </div>
       <!-- Delete link flight_table end -->
     </div>
