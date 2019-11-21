@@ -10,7 +10,8 @@ class FlightTablesController < ApplicationController
   end
 
   def index
-    @flight_tables = current_user.flights.page(params[:page]).per(10)
+    @q = current_user.flights.ransack(params[:q])
+    @flight_tables = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("flight_table_templates/index.html.erb")
   end
