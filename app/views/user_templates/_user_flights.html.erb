@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.flights.each do |flight_table| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/flight_tables/<%= flight_table.id %>">
           <%= flight_table.description %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

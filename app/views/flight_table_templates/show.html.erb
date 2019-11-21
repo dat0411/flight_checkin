@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link flight_table start -->
       <div class="col">
         <% if current_user == @flight_table.user %>
           <a href="/flight_tables/<%= @flight_table.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link flight_table end -->
 
-      <!-- Delete link flight_table start -->
       <div class="col">
         <% if current_user == @flight_table.user %>
           <a href="/delete_flight_table/<%= @flight_table.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,32 +26,26 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link flight_table end -->
     </div>
 
     <dl>
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @flight_table.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Time
       </dt>
-      <!-- Display time start -->
       <dd>
         <%= @flight_table.time %>
       </dd>
-      <!-- Display time end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @flight_table.user.present? %>
           <a href="/users/<%= @flight_table.user_id %>">
@@ -62,28 +53,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@flight_table.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@flight_table.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
