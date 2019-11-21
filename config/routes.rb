@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "flight_tables#index"
   # Routes for the Flight table resource:
 
   # CREATE
