@@ -74,7 +74,11 @@
 
         <!-- Display flight_table.user_id start -->
         <td>
-          <%= flight_table.user.email %>
+          <% if flight_table.user.present? %>
+            <a href="/users/<%= flight_table.user.id %>">
+              <%= flight_table.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display flight_table.user_id end -->
 
