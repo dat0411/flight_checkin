@@ -5,4 +5,6 @@ class FlightTable < ApplicationRecord
 
   # Validations
 
+  validates :description, :presence => true
+
 end
