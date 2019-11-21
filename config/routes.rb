@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_flight_table/:id_to_remove", { :controller => "flight_tables", :action => "destroy_row" })
+  get("/delete_flight_table_from_user/:id_to_remove", { :controller => "flight_tables", :action => "destroy_row_from_user" })
 
   #------------------------------
 
